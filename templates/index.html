@@ -1,0 +1,450 @@
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- <link rel="stylesheet" href="style.css">-->
+  <title>Descarga de Musica</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat';
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    #inicio {
+        background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("img/fondo-inicio.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 100vh;
+    }
+    
+    #inicio .contenido header {
+        background-color: rgba(0, 0, 0, .8);
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        top: 0;
+    }
+    
+    #inicio .contenido header .contenido-header {
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    #inicio .contenido header .contenido-header h1 {
+        text-align: center;
+        color: #58e4f7;
+    }
+    
+    #inicio .contenido header .contenido-header nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+    
+    #inicio .contenido header .contenido-header nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 12px;
+        font-weight: 400;
+        transition: .5s;
+    }
+    
+    #inicio .contenido header .contenido-header nav ul li a:hover {
+        color: #58e4f7;
+    }
+    
+    #inicio .contenido header .contenido-header .redes a {
+        text-decoration: none;
+        color: #fff;
+        display: inline-block;
+        margin-left: 10px;
+        transition: .5s;
+    }
+    
+    #inicio .contenido header .contenido-header .redes a:hover {
+        color: #58e4f7;
+    }
+    
+    #inicio .contenido header .contenido-header .seleccionado {
+        color: #58e4f7;
+    }
+    
+    #inicio .contenido .presentacion {
+        max-width: 1100px;
+        height: 100vh;
+        margin: auto;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #inicio .contenido .presentacion .bienvenida {
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+    
+    #inicio .contenido .presentacion h2 {
+        font-size: 55px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    
+    #inicio .contenido .presentacion h2 span {
+        font-size: 40px;
+        color: #58e4f7;
+    }
+    
+    #inicio .contenido .presentacion .descripcion {
+        max-width: 700px;
+        margin: 25px auto;
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    #inicio .contenido .presentacion a {
+        text-decoration: none;
+        display: inline-block;
+        margin: 25px;
+        padding: 20px 25px;
+        border: 2px solid #fff;
+        border-radius: 50px;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: .5s;
+    }
+    
+    #inicio .contenido .presentacion a:hover {
+        background-color: #58e4f7;
+    }
+    
+    #icono-nav {
+        color: #fff;
+        display: none;
+    }
+    
+    
+    
+    #sobreproyecto {
+        max-width: 1100px;
+        margin: auto;
+        padding: 100px 15px;
+        color: #111135;
+        display: flex;
+    }
+    
+    #sobreproyecto .contenedor-foto {
+        max-width: 400px;
+        margin-right: 80px;
+    }
+    
+    #sobreproyecto .contenedor-foto img {
+        padding: 20px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: #f3f3f3;
+    }
+    
+    #sobreproyecto .sobreproyecto {
+        margin: 0 40px;
+    }
+    
+    #sobreproyecto .sobreproyecto .titulo-seccion {
+        font-size: 22px;
+        text-transform: uppercase;
+        color: #111135;
+        text-decoration: underline;
+        text-decoration-color: #d3d3d3;
+        text-decoration-thickness: 5px;
+    }
+    
+    #sobreproyecto .sobreproyecto h2 {
+        font-size: 34px;
+        font-weight: bold;
+        margin: 20px 0;
+        letter-spacing: 2px;
+    }
+    
+    #sobreproyecto .sobreproyecto h2 span {
+        color: #58e4f7;
+    }
+    
+    #sobreproyecto .sobreproyecto h3 {
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+    
+    #sobreproyecto .sobreproyecto p {
+        font-size: 14px;
+        line-height: 25px;
+        color: #565656;
+        margin-bottom: 12px;
+    }
+    
+    #sobreproyecto .sobreproyecto a {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        border-radius: 30px;
+        border: 1px solid #000;
+        padding: 10px 20px;
+        margin-top: 30px;
+        transition: .5s;
+    }
+    
+    #sobreproyecto .sobreproyecto a:hover {
+        background-color: #58e4f7;
+        color: #fff;
+    }
+    /*diseño del apartado de descarga*/
+  
+    
+  
+  
+  
+  form {
+    max-width: 500px;
+              margin: 0 auto;
+              background-color: #ffffff;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0px 0px 10px 0px #000000;
+  }
+  
+  .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+  label {
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+  
+  .btn {
+    background-color: aqua;
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+  .alert-container {
+      max-width: 500px;
+      margin: 0 auto;
+      margin-top: 20px;
+      
+  }
+  
+  
+  
+  
+  
+  
+    #servicios {
+        padding: 100px 15px;
+        text-align: center;
+        background-color: #f3f3f3;
+    }
+    
+    #terminos .terminos p {
+      font-size: 14px;
+      line-height: 25px;
+      color: #565656;
+      margin-bottom: 12px;
+  }
+    
+    
+    footer {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 30px 0;
+    }
+    
+    footer a {
+        text-decoration: none;
+        color: #fff;
+        display: inline-block;
+        margin: 5px;
+        font-size: 26px;
+    }
+
+</style>
+<body>
+  <section id="inicio">
+      <div class="contenido">
+          <header>
+              <div class="contenido-header">
+                  <h1>UNABSO-MUSIC</h1>
+                  <nav id="nav" class="">
+                      <ul id="links">
+                          <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                          <li><a href="#sobreproyecto" onclick="seleccionar(this)">SOBRE EL PROYECTO</a></li>
+                          <li><a href="#servicios" onclick="seleccionar(this)">Descargar</a></li>
+                          <li><a href="#terminos" onclick="seleccionar(this)">Terminos</a></li>
+                          <li><a href="escritorio/YouTubeDownload.back.msi" onclick="seleccionar(this)">descarga v2.0</a></li>
+                      </ul>
+                  </nav>
+
+                 
+                  <div id="icono-nav" onclick="responsiveMenu()">
+                      <i class="fa-solid fa-bars"></i>
+                  </div>
+
+
+                  <div class="redes">
+                     
+                      <a href="https://twitter.com/unabelsalvador"><i class="fa-brands fa-twitter"></i></a>
+                      <a href="https://www.facebook.com/UNABElSalvador/"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="https://www.instagram.com/unabelsalvador/"><i class="fa-brands fa-instagram-square"></i></a>
+                  </div>
+              </div>
+          </header>
+          <div class="presentacion">
+              <p class="bienvenida">Bienvenidos</p>
+              <h2> <span>Sistema de descarga</span></h2>
+              <p class="descripcion">Desarrollado por estudiantes de la Universidad Dr. Andres Bello </p>
+              <a href="#servicios">Ir a Descarga</a>
+          </div>
+      </div>
+  </section>
+
+  <section id="sobreproyecto">
+
+      <div class="contenedor-foto">
+          <img src="/escritorio/perfil.jpg" alt="foto presentacion">
+      </div>
+      <div class="sobreproyecto">
+          <p class="titulo-seccion">Sobre El sistema</p>
+          <h2> <span>UNABSO-MÚSIC</span> </h2>
+          <h3>Descarga de videos y música</h3>
+          <p> La descarga de videos te permite guardar tus contenidos audiovisuales favoritos en tu dispositivo para verlos en cualquier momento y lugar, sin necesidad de una conexión a internet.</p>
+          <a href="/manual.pdf">Descargar manual</a>
+      </div>
+  </section>
+
+  <section id="servicios">
+    <div class="container">
+      <h1 class="mt-4">Descargar Música UNABSO</h1>
+  
+      <form method="post" action="/descargar">
+        <div class="form-group">
+          <label for="url">Ingresa la URL del video de YouTube:</label>
+          <input type="text" class="form-control" name="url" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="formato">Selecciona el formato:</label>
+          <select class="form-control" name="formato" required>
+            <option value="video">Video</option>
+            <option value="audio">Audio (mp3)</option>
+          </select>
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Descargar</button>
+      </form>
+  
+      <div class="progress-container">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+  
+      <div class="alert-container">
+        {% if estado_descarga %}
+          <div class="alert alert-success mt-4">
+            {{ estado_descarga }}
+          </div>
+        {% endif %}
+      </div>
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js"></script>
+      <script>
+        var socket = io(); // Conectarse al servidor SocketIO
+  
+        socket.on('update_progress', function(data) {
+          // Actualiza el elemento de la barra de progreso (reemplaza con tu elemento de barra de progreso real)
+          document.getElementById('progress-bar').value = data.percentage;
+        });
+  
+        socket.on('download_complete', function() {
+          // Mensaje de descarga completada (opcional)
+          alert("Descarga completada!");
+        });
+      </script>
+    </div>
+  </section>
+
+  <section id="terminos">
+      <h3 class="titulo-seccion">Terminos y Condiciones</h3>
+      <p>
+        Al acceder y utilizar este sitio web, usted acepta y se compromete a cumplir con estos Términos y Condiciones de Uso (en adelante, los "Términos"). Si no está de acuerdo con estos Términos, no debe acceder ni utilizar este sitio web.
+
+
+        Este Sitio Web puede contener enlaces a otros sitios web que no son propiedad ni están controlados por [Nombre del sitio web]. [Nombre del sitio web] no se hace responsable del contenido, la precisión o las prácticas de dichos sitios web. Usted accede a ellos bajo su propio riesgo.
+
+
+      </p>
+  </section>
+
+  <footer>
+      <img class="imagen-tel" href="./img/">
+      <div class="redes">
+          <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Funabelsalvador"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+      </div>
+      <p> © copyright-Samuel-Edwin-Enmanuel-Vladimir-2024</p>
+
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+</body>
+
+</html>
